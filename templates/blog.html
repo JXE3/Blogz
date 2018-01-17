@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>
+    <center>These Blogs</center>
+</h1>
+
+{% if blogs|length == 0 %}
+    <p>No Blogs entered yet</p>
+
+{% else %}
+
+    {% for b in blogs %}
+        
+        <h2><a href="/thisBlog?id={{b.id}}">{{b.title}}</a></h2>
+            
+         
+        <textarea rows="3" cols="50" maxlength="150" readonly>{{b.body}}</textarea>
+
+    
+    {% endfor %}
+
+{% endif %}
+
+    
+
+{% endblock %}
